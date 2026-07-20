@@ -13,3 +13,10 @@ backend/venv/
 backend/__pycache__/
 backend/.env
 backend/uploads/
+backend/venv/
+backend/.env
+backend/__pycache__/
+__pycache__/
+*.pyc
+backend/uploads/
+uploads/
