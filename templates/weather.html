@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>🌱 Smart Agriculture</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/crop">Crop Prediction</a>
+        <a href="/disease">Disease Detection</a>
+        <a href="/weather">Weather</a>
+        <a href="/market">Market Price</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>🌦 Weather Information</h1>
+
+    <form action="/weather" method="POST">
+
+        <label>Enter City Name:</label>
+        <br><br>
+
+        <input type="text" name="city" placeholder="Enter city">
+
+        <br><br>
+
+        <button type="submit">Check Weather</button>
+
+    </form>
+
+    {% if weather %}
+
+    <div class="weather-header">
+
+        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@4x.png"
+             alt="Weather Icon">
+
+        <h2>{{ weather.temperature }}°C</h2>
+
+        <h3>{{ weather.condition }}</h3>
+
+    </div>
+
+    <div class="result-grid">
+
+        <div class="result-card">
+            <h3>📍 City</h3>
+            <p>{{ weather.city }}</p>
+        </div>
+
+        <div class="result-card">
+            <h3>🌡 Temperature</h3>
+            <p>{{ weather.temperature }}°C</p>
+        </div>
+
+        <div class="result-card">
+            <h3>💧 Humidity</h3>
+            <p>{{ weather.humidity }}%</p>
+        </div>
+
+        <div class="result-card">
+            <h3>💨 Wind Speed</h3>
+            <p>{{ weather.wind }} m/s</p>
+        </div>
+
+        <div class="result-card">
+            <h3>🌦 Condition</h3>
+            <p>{{ weather.condition }}</p>
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

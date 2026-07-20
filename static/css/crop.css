@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#08131A;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    color:white;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+.card{
+    width:850px;
+    background:#12232E;
+    padding:40px;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+h1{
+    color:#22C55E;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#BFC9CF;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.input-box{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin-bottom:8px;
+    color:#DCE6EA;
+}
+
+input{
+    background:#0B1820;
+    border:1px solid rgba(255,255,255,.08);
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    outline:none;
+}
+
+input:focus{
+    border:1px solid #22C55E;
+}
+
+button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#16A34A,#22C55E);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.02);
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:25px;
+    color:#22C55E;
+    text-decoration:none;
+}
+textarea{
+
+    width:100%;
+
+    min-height:120px;
+
+    background:#0F1B24;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    resize:none;
+
+    outline:none;
+
+    font-size:15px;
+
+    margin-top:8px;
+
+}
+
+img{
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+.market-header{
+    background:linear-gradient(135deg,#e8f5e9,#ffffff);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+
+.hero-heading{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:42px;
+    font-weight:800;
+    color:#1b5e20;
+    letter-spacing:1px;
+}
+
+
+.hero-heading span{
+    display:block;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+
+.hero-subtitle{
+    text-align:center;
+    color:#4d6b50;
+    font-size:18px;
+}

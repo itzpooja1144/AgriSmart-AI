@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Market Price Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/crop.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<h1>
+<i class="fa-solid fa-seedling"></i>
+Market Price Prediction Result
+</h1>
+
+<div class="grid">
+
+
+<div class="input-box">
+
+<label>Crop Name</label>
+
+<input value="{{ crop }}" readonly>
+
+</div>
+
+
+<div class="input-box">
+
+<label>Market</label>
+
+<input value="{{ market }}" readonly>
+
+</div>
+
+
+<div class="input-box">
+
+<label>Region</label>
+
+<input value="{{ region }}" readonly>
+
+</div>
+
+
+<div class="input-box">
+
+<label>🏛 Government MSP</label>
+
+<input value="₹{{ price.government }} per quintal" readonly>
+
+</div>
+
+
+<div class="input-box">
+
+<label>🌾 Mandi Price</label>
+
+<input value="₹{{ price.mandi }} per quintal" readonly>
+
+</div>
+
+
+<div class="input-box">
+
+<label>🤝 Private Sale</label>
+
+<input value="₹{{ price.private }} per quintal" readonly>
+
+</div>

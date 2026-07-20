@@ -1,0 +1,1187 @@
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0d1b2a;
+    color:white;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+
+    width:260px;
+
+    background:#0f172a;
+
+    color:white;
+
+    position:fixed;
+
+    height:100vh;
+
+    padding:25px;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#4ade80;
+
+    margin-bottom:40px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li.active{
+    box-shadow:0 10px 25px rgba(34,197,94,.4);
+}
+
+.sidebar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:block;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:#22c55e;
+
+}
+
+.active a{
+
+    background:#16a34a;
+
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:35px;
+    background:#08131A;
+
+    min-height:100vh;
+    /* height:100vh; */
+    /* overflow:hidden; */
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    width: 380px;
+    background: #12232E;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.search i{
+    color: #9CA3AF;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.search input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    margin-left: 0;
+}
+
+.search input::placeholder{
+    color: #9CA3AF;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #12232E;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.profile:hover{
+    transform: translateY(-3px);
+    border-color: #22C55E;
+    box-shadow: 0 15px 30px rgba(34,197,94,.25);
+}
+
+.profile i{
+    color: #22C55E;
+    font-size: 18px;
+}
+
+
+/* ================= HERO ================= */
+body{
+    background:#08131A;
+    color:white;
+}
+.hero{
+    min-height:420px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    padding:35px;
+
+    background:
+        linear-gradient(rgba(8,19,26,.45),rgba(8,19,26,.45)),
+        url("../images/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    border-radius:25px;
+    margin-bottom:30px;
+}
+.weather-card{
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    padding:35px;          /* pehle 25px tha */
+    border-radius:30px;
+
+    text-align:center;
+    color:white;
+
+    min-width:220px;       /* pehle 160px tha */
+    min-height:180px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.3);
+
+    position:absolute;
+    right:40px;
+    bottom:50px;
+}
+
+/* Card Hover Effect */
+
+.weather-card:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+   
+box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+}
+
+
+
+/* Temperature */
+
+.weather-card h2{
+
+    font-size:38px;
+    margin:0;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.7);
+
+}
+
+
+
+/* Text */
+
+.weather-card p{
+
+    font-size:18px;
+    margin:8px;
+
+}
+
+
+
+/* Floating Weather Icon */
+
+.weather-icon{
+
+    font-size:65px;
+
+    margin-bottom:10px;
+
+    animation:float 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 15px orange);
+}
+
+
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ADD THIS */
+.hero-left{
+    width:45%;
+    z-index:2;
+}
+
+
+.hero-left h1{
+    font-size:55px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-shadow:0 5px 15px rgba(0,0,0,.5);
+}
+
+.hero-left h2{
+
+    margin-top:15px;
+
+    color:#9be15d;
+
+}
+
+.hero-left p{
+
+    margin:20px 0;
+
+    max-width:550px;
+
+    line-height:1.8;
+
+}
+
+.hero button{
+
+    padding:14px 35px;
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+}
+
+.hero button:hover{
+
+    background:#16a34a;
+
+}
+/*================ GRID =================*/
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1.2fr;
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    color:#15803d;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#666;
+
+    margin-bottom:20px;
+
+    line-height:1.6;
+
+}
+
+.card table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:15px 0;
+
+}
+
+.card th{
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+.card td{
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.card button{
+
+    padding:12px 25px;
+
+    background:#16a34a;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.card button:hover{
+
+    background:#0f8a38;
+
+}
+
+/*================ SMALL CARDS =================*/
+
+.small-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:30px;
+}
+
+.small-card{
+    background:#12232E;
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+
+    height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+
+    border:none;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+.card-image{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    width:100px;
+    height:100px;
+    object-fit:contain;
+}
+.small-card h3,
+.small-card p{
+    width:60%;
+    line-height:1.7;
+    color:#D1D5DB;
+}
+
+.small-card a{
+    margin-top:auto;
+}
+
+.small-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(34,197,94,.25);
+}
+
+.small-card h3{
+    color:#22C55E;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.small-card p{
+    color:#C7D2D9;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.small-card ul{
+    margin-top:15px;
+    padding-left:18px;
+}
+
+.small-card li{
+    margin-bottom:10px;
+    color:#C7D2D9;
+}
+
+.small-card button{
+    margin-top:10px;
+    padding:14px 34px;
+    border:none;
+    border-radius:12px;
+    background:#22c55e;
+    color:#fff;
+    font-size:22px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.small-card button:hover{
+    transform:scale(1.04);
+}
+.small-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:18px;
+    right:18px;
+    height:4px;
+    background:#22C55E;
+    border-radius:10px;
+}
+/*================ WEATHER =================*/
+
+.weather-box{
+    width:280px;
+    background:rgba(15,23,42,.75);
+    backdrop-filter:blur(10px);
+    padding:22px;
+    border-radius:20px;
+    color:white;
+    z-index:2;
+}
+
+.weather-box h1{
+
+    font-size:48px;
+
+    margin:10px 0;
+
+}
+
+.weather-details{
+
+
+    justify-content:space-between;
+
+    margin-top:20px;
+
+}
+
+/*================ FOOTER =================*/
+
+footer{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#666;
+
+    padding:20px;
+
+}
+
+/*================ MOBILE =================*/
+
+@media(max-width:1000px){
+
+.grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.small-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px;
+    margin-top:30px;
+}
+.hero{
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.weather-box{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+
+background:#0B1622;
+
+border-right:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.logo span{
+
+    display:none;
+
+}
+
+.sidebar a{
+
+    font-size:0;
+
+}
+
+.sidebar i{
+
+    font-size:22px;
+
+}
+
+.main{
+    margin-left:90px;
+    width:calc(100% - 90px);
+    padding:15px;
+}
+.topbar{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.search{
+    display:flex;
+    align-items:center;
+    width:100%;
+    max-width:380px;
+    background:#12232E;
+    padding:12px 18px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.search i{
+    color:#22C55E;
+    font-size:18px;
+    margin-right:10px;
+}
+
+.search input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+    font-size:16px;
+}
+.search input::placeholder{
+    color:#9CA3AF;
+}
+}
+
+@media(max-width:1000px){
+
+.hero{
+    flex-direction:column;
+    gap:25px;
+    text-align:center;
+}
+
+}
+
+/*================ PREMIUM EFFECTS =================*/
+
+.sidebar{
+    box-shadow:8px 0 30px rgba(0,0,0,.25);
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    transform:translateX(8px);
+    background:#22c55e;
+}
+
+/* ================= WEATHER CARD ================= */
+
+.weather-box{
+    width:320px;
+    z-index:2;
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+
+.weather-box h1{
+    color:#4ade80;
+}
+
+/* ================= CARDS ================= */
+
+.card,
+.small-card{
+    transition:.35s;
+}
+
+
+.card:hover,
+.small-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(34,197,94,.18);
+}
+
+
+.card button,
+.small-card button,
+.hero button{
+    transition:.3s;
+}
+
+
+.card button:hover,
+.small-card button:hover,
+.hero button:hover{
+    transform:scale(1.05);
+}
+
+
+/* ================= TABLE ================= */
+
+table tr:hover{
+    background:#eefdf0;
+}
+
+
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background:#16a34a;
+    border-radius:10px;
+}
+
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    font-size:15px;
+    font-weight:500;
+}
+
+
+
+/* ================= DISEASE PAGE ================= */
+
+.disease-page{
+    padding:35px;
+}
+
+
+.page-title{
+    text-align:center;
+    font-size:38px;
+    color:#22c55e;
+}
+
+
+.page-subtitle{
+    color:#666;
+    margin-bottom:30px;
+    font-size:17px;
+}
+
+
+.disease-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+
+.upload-card,
+.result-card{
+    background:#12232E;
+    border-radius:20px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+.upload-box{
+    border:2px dashed #22C55E;
+    border-radius:18px;
+    padding:50px 20px;
+    text-align:center;
+    background:#0F172A;
+    margin:20px 0;
+}
+
+.predict-btn{
+    background:#21b44b;
+    color:white;
+    border:none;
+    padding:14px 40px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+
+.result-image{
+    width:100%;
+    border-radius:15px;
+}
+
+
+.result-box{
+    background:#1A2E3B;
+    border-left:6px solid #22c55e;
+    padding:18px;
+    border-radius:12px;
+    color:white;
+}
+
+
+
+@media(max-width:900px){
+
+    .disease-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+
+/* ================= WELCOME TEXT ================= */
+
+.welcome h2{
+    color:#ffffff;
+    font-size:28px;
+}
+
+
+.welcome p{
+    color:#b0b8c1;
+    font-size:15px;
+    margin-top:5px;
+}
+
+
+
+/* Premium Card Hover */
+
+.feature-card{
+    transition:0.4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.45);
+
+}
+
+
+/* Green Glow Top Line */
+
+.feature-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:#22c55e;
+
+    transform:scaleX(0);
+
+    transition:.4s;
+
+}
+
+.feature-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+
+
+/* DISEASE PAGE FIX */
+
+.disease-page{
+    padding:40px;
+    width:100%;
+}
+
+
+.disease-container{
+
+    display:grid !important;
+
+    grid-template-columns:1fr 1fr !important;
+
+    gap:30px !important;
+
+    margin-top:40px;
+
+}
+
+
+.upload-card,
+.result-card{
+
+    background:#12232E !important;
+
+    color:white !important;
+
+    border-radius:25px !important;
+
+    padding:35px !important;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.3) !important;
+
+}
+
+
+.upload-box{
+
+    padding:50px 20px !important;
+
+    border:2px dashed #22c55e !important;
+
+    border-radius:20px !important;
+
+    text-align:center !important;
+
+}
+.page-title{
+    text-align:center;
+    color:#22c55e;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.page-subtitle{
+    text-align: center;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.upload-box i{
+    font-size: 55px;
+    color: #22c55e;
+}
+
+
+.predict-btn{
+
+    width:100%;
+    padding:15px;
+
+    background:#22c55e;
+    color:white;
+
+    border:none;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:17px;
+}
+
+.card-image{
+    position:absolute;
+    right:20px;
+    bottom:18px;
+
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+}
+.small-card h3{
+    color:#22C55E;
+    font-size:22px;
+    margin-bottom:15px;
+    width:65%;
+}
+.small-card p{
+    color:#D1D5DB;
+    line-height:1.7;
+    width:65%;
+    margin-bottom:35px;
+}
+.small-card a{
+    position:absolute;
+    left:28px;
+    bottom:32px;
+    z-index:2;
+}
+.weather-condition{
+    color:white;
+    font-size:18px;
+    margin-top:8px;
+    font-weight:500;
+}
+
+.weather-location{
+    color:#9BE15D;
+    font-size:22px;
+    font-weight:700;
+    margin-top:10px;
+    letter-spacing:1px;
+}
+.ai-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#16232d;
+    border-radius:20px;
+    padding:40px;
+    margin-top:30px;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.ai-content{
+    width: 55%;
+}
+
+.ai-content h2{
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.ai-content p{
+    color: #cbd5e1;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.chat-btn{
+    display: inline-block;
+    background: #22c55e;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.ai-image{
+    width:40%;
+    text-align:center;
+}
+
+.ai-image img{
+    width:280px;
+    max-width:100%;
+}
+.sidebar{
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar ul{
+    flex:1;
+}
+
+.sidebar-chat{
+    background:#16232D;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.sidebar-chat i{
+    font-size:32px;
+    color:#22c55e;
+    margin-bottom:10px;
+}
+
+.sidebar-chat h3{
+    color:#fff;
+    margin-bottom:8px;
+}
+
+.sidebar-chat p{
+    color:#cbd5e1;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.chat-sidebar-btn{
+    display:block;
+    background:#22c55e;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.chat-btn:hover{
+    background: #16a34a;
+    transform: translateY(-2px);
+}
+@media (max-width: 768px){
+
+    .dashboard{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        width: 100%;
+        height: auto;
+    }
+
+    .main{
+        width: 100%;
+        padding: 15px;
+    }
+
+    .hero{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .weather-card{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .small-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .topbar{
+        flex-direction: column;
+        gap: 15px;
+    }

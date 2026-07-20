@@ -1,0 +1,6 @@
+N,P,K,temperature,humidity,rainfall,soil,crop
+90,42,43,20,82,202,Clay,Rice
+85,58,41,21,80,200,Loamy,Rice
+60,55,44,23,60,100,Sandy,Maize
+70,40,40,25,65,90,Loamy,Wheat
+75,45,35,22,70,150,Clay,Cotton

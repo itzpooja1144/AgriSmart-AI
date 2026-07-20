@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disease Detection</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="disease-page">
+
+<h1 class="page-title">
+🌿 Crop Disease Detection
+</h1>
+
+<p class="page-subtitle">
+Upload a leaf image and let AI identify the disease.
+</p>
+
+<form action="/predict_disease"
+method="POST"
+enctype="multipart/form-data">
+
+<div class="disease-container">
+
+<div class="upload-card">
+
+<h2>
+<i class="fa-solid fa-cloud-arrow-up"></i>
+Upload Leaf Image
+</h2>
+
+<div class="upload-box">
+
+<i class="fa-solid fa-leaf"></i>
+
+<p>Select a JPG, PNG or JPEG image.</p>
+
+<input
+type="file"
+name="leaf_image"
+accept="image/*"
+required>
+
+</div>
+
+<br>
+
+<button
+class="predict-btn"
+type="submit">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Detect Disease
+
+</button>
+
+</div>
+
+<div class="result-card">
+
+<h2>
+<i class="fa-solid fa-circle-info"></i>
+AI Detection
+</h2>
+
+<p>
+✔ Upload a clear leaf image.
+</p>
+
+<p>
+✔ AI will predict the disease.
+</p>
+
+<p>
+✔ Treatment will be displayed after prediction.
+</p>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

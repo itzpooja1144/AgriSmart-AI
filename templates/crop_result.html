@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crop Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/crop.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>
+<i class="fa-solid fa-seedling"></i>
+Crop Recommendation Result
+</h1>
+
+<div class="grid">
+
+<div class="input-box">
+<label>Nitrogen</label>
+<input value="{{N}}" readonly>
+</div>
+
+<div class="input-box">
+<label>Phosphorus</label>
+<input value="{{P}}" readonly>
+</div>
+
+<div class="input-box">
+<label>Potassium</label>
+<input value="{{K}}" readonly>
+</div>
+
+<div class="input-box">
+<label>Temperature</label>
+<input value="{{temperature}}" readonly>
+</div>
+
+<div class="input-box">
+<label>Humidity</label>
+<input value="{{humidity}}" readonly>
+</div>
+
+<div class="input-box">
+<label>Rainfall</label>
+<input value="{{rainfall}}" readonly>
+</div>
+
+</div>
+
+<br>
+
+<h2 style="color:#22C55E;">
+🌾 Recommended Crop
+</h2>
+
+<h1 style="margin-top:10px;">
+{{ crop }}
+</h1>
+
+<br>
+
+<a href="/crop">
+
+<button>
+Predict Again
+</button>
+
+</a>
+
+<br><br>
+
+<a href="/dashboard" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disease Detection Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/crop.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>
+<i class="fa-solid fa-leaf"></i>
+Disease Detection Result
+</h1>
+
+<br>
+
+<div style="text-align:center;">
+
+<img
+src="{{ url_for('uploaded_file', filename=image_name) }}"
+style="width:300px;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+border:4px solid #22C55E;">
+
+</div>
+
+<br>
+
+<div class="grid">
+
+<div class="input-box">
+
+<label>Crop Name</label>
+
+<input
+value="{{ crop_name }}"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>Disease</label>
+
+<input
+value="{{ disease }}"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>Confidence</label>
+
+<input
+value="{{ confidence }} %"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>Severity</label>
+
+<input
+value="{{ severity }}"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>Symptoms</label>
+
+<textarea readonly>{{ symptoms }}</textarea>
+
+</div>
+
+<div class="input-box">
+
+<label>Treatment</label>
+
+<textarea readonly>{{ treatment }}</textarea>
+
+</div>
+
+</div>
+
+<br>
+
+<a href="/disease">
+
+<button>
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Detect Again
+
+</button>
+
+</a>
+
+<br><br>
+
+<a href="/dashboard" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back To Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

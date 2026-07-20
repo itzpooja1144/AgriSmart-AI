@@ -1,0 +1,11 @@
+crop_name,market_name,price_per_kg,date,region,min_price,max_price,avg_price
+Wheat,Local Market,25.50,2024-07-15,North India,24.00,28.00,25.50
+Rice,Local Market,42.30,2024-07-15,Eastern India,40.00,45.00,42.30
+Tomato,Vegetable Market,18.75,2024-07-15,Pan India,15.00,22.00,18.75
+Cotton,Agricultural Exchange,65.00,2024-07-15,Central India,62.00,68.00,65.00
+Potato,Wholesale Market,22.00,2024-07-15,Northern India,20.00,24.00,22.00
+Wheat,Local Market,26.00,2024-07-14,North India,24.00,28.00,26.00
+Rice,Local Market,41.50,2024-07-14,Eastern India,40.00,45.00,41.50
+Tomato,Vegetable Market,19.00,2024-07-14,Pan India,15.00,22.00,19.00
+Cotton,Agricultural Exchange,64.50,2024-07-14,Central India,62.00,68.00,64.50
+Potato,Wholesale Market,21.75,2024-07-14,Northern India,20.00,24.00,21.75

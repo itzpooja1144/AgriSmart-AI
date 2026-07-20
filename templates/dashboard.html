@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgriSmart AI Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="logo">
+🌱 <span>AgriSmart AI</span>
+</div>
+
+
+<ul>
+
+<li class="active">
+<a href="/dashboard">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+</li>
+
+
+<li>
+<a href="/crop">
+<i class="fa-solid fa-seedling"></i>
+Crop Recommendation
+</a>
+</li>
+
+
+<li>
+<a href="/disease">
+<i class="fa-solid fa-leaf"></i>
+Disease Detection
+</a>
+</li>
+
+
+<li>
+<a href="/weather">
+<i class="fa-solid fa-cloud-sun"></i>
+Weather
+</a>
+</li>
+
+
+<li>
+<a href="/market">
+<i class="fa-solid fa-chart-line"></i>
+Market Price
+</a>
+</li>
+
+
+</ul>
+<div class="sidebar-chat">
+
+    <i class="fa-solid fa-robot"></i>
+
+    <h3>AI Assistant</h3>
+
+    <p>Need farming help?</p>
+
+    <a href="/chatbot" class="chat-sidebar-btn">
+        💬 Start Chat
+    </a>
+
+</div>
+</aside>
+
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div class="welcome">
+        <h2>🌱 Welcome to AgriSmart AI</h2>
+        <p>Smart Farming Dashboard</p>
+    </div>
+
+    <div class="profile">
+        <i class="fa-solid fa-user"></i>
+        👋 Welcome, Farmer 🌾
+    </div>
+
+</div>
+
+
+
+<div class="hero">
+
+    <div class="hero-left">
+        <h1>🌱 Welcome Farmer</h1>
+        <p>Manage your crops with AI technology.</p>
+
+        <a href="/crop">
+            <button>Start Prediction</button>
+        </a>
+    </div>
+
+<div class="weather-card">
+
+    <div class="weather-icon">
+        ☀️
+    </div>
+
+    <h2>{{ weather.temperature }}°C</h2>
+
+    <p class="weather-condition">
+        {{ weather.condition }}
+    </p>
+
+    <p class="weather-location">
+        Punjab
+    </p>
+
+</div>
+
+</div><!-- hero close -->
+
+<!-- MAIN CARDS -->
+
+<div class="small-grid">
+
+<div class="small-card">
+
+<h3>
+🌱 Crop Recommendation
+</h3>
+
+<p>
+Find suitable crops based on soil and climate conditions.
+</p>
+<a href="/crop">
+<button>
+Explore
+</button>
+</a>
+<img src="{{ url_for('static', filename='images/crop.png') }}"
+     class="card-image"
+     alt="Crop">
+
+</div>   <!-- Crop card close -->
+
+<div class="small-card">
+<h3>
+🍃 Disease Detection
+</h3>
+<p>
+Detect plant diseases using CNN AI technology.
+</p>
+<a href="/disease">
+
+<button>
+Detect
+</button>
+
+</a>
+<img src="{{ url_for('static', filename='images/disease.png') }}"
+     class="card-image big-image"
+     alt="Disease">
+</div>
+
+<div class="small-card">
+
+<h3>
+📈 Market Price
+</h3>
+
+
+<p>
+Predict crop prices and make better selling decisions.
+</p>
+<a href="/market">
+
+<button>
+Check Price
+</button>
+
+</a>
+<img src="{{ url_for('static', filename='images/market.png') }}" class="card-image" alt="Market">
+
+</div>
+
+<div class="small-card">
+
+<h3>
+🌦 Weather Information
+</h3>
+
+<p>
+Check current temperature, humidity and weather condition.
+</p>
+<a href="/weather">
+
+<button>
+Check Weather
+</button>
+
+</a>
+<img src="{{ url_for('static', filename='images/weather.png') }}"
+     class="card-image big-image"
+     alt="Weather">
+
+</div> <!-- Weather card close -->
+
+</div> <!-- small-grid close -->
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 AgriSmart AI | Smart Farming Solution
+
+</footer>
+
+
+</main>
+
+
+</div>
+
+
+</body>
+
+</html>

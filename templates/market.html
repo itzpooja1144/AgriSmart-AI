@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Market Price Prediction</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/crop.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+<div class="market-header">
+
+<h1 class="hero-heading">
+<span>🌾</span>
+Market Price<br>
+Prediction
+</h1>
+
+<p class="hero-subtitle">
+Smart AI based crop price prediction for farmers
+</p>
+
+</div>
+
+
+
+<form action="/predict_market" method="POST">
+
+
+<div class="input-box">
+
+<label>Select Crop</label>
+
+<select name="crop_name" required>
+
+<option>Wheat</option>
+<option>Rice</option>
+<option>Maize</option>
+<option>Cotton</option>
+<option>Sugarcane</option>
+
+</select>
+
+</div>
+
+
+
+<div class="input-box">
+
+<label>Select Market</label>
+
+<select name="market_name" required>
+
+<option>Local Market</option>
+<option>Wholesale Market</option>
+<option>Government Mandi</option>
+
+</select>
+
+</div>
+
+
+
+<div class="input-box">
+
+<label>Select Region</label>
+
+<select name="region" required>
+
+<option>North India</option>
+<option>South India</option>
+<option>East India</option>
+<option>West India</option>
+
+</select>
+
+</div>
+
+
+
+<button type="submit">
+
+🌱 Predict Price
+
+</button>
+
+
+</form>
+
+
+<br>
+
+
+<a href="/dashboard">
+
+<button class="back-btn">
+
+← Back To Dashboard
+
+</button>
+
+</a>
+
+
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>
