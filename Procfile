@@ -1,1 +1,0 @@
-cd backend && gunicorn app:appdir backend
