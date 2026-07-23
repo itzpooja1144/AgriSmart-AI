@@ -12,9 +12,18 @@ from dotenv import load_dotenv
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API_KEY = "16b017cbcad811efce8a81b7b7b2d542"
+print("=" * 50)
 print("FILE =", __file__)
 print("CWD =", os.getcwd())
 print("BASE_DIR =", BASE_DIR)
+
+print("BASE_DIR EXISTS:", os.path.exists(BASE_DIR))
+print("ML_Model EXISTS:", os.path.exists(os.path.join(BASE_DIR, "ML_Model")))
+
+if os.path.exists(BASE_DIR):
+    print("BASE_DIR FILES:", os.listdir(BASE_DIR))
+
+print("=" * 50)
 # with open("../ML_Model/crop_model.pkl", "rb") as f: 
 #     crop_model = pickle.load(f)
 with open(os.path.join(BASE_DIR, "ML_Model", "crop_model.pkl"), "rb") as f:
