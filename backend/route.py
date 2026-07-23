@@ -11,20 +11,12 @@ from groq import Groq
 from dotenv import load_dotenv
 import os
 
-
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 API_KEY = "16b017cbcad811efce8a81b7b7b2d542"
 
 
-# with open("../ML_Model/crop_model.pkl", "rb") as f: 
-#     crop_model = pickle.load(f)
-
-print("CURRENT FILE:", __file__)
-print("CURRENT DIR:", os.path.dirname(__file__))
-print("BASE_DIR:", BASE_DIR)
-
-with open(os.path.join(BASE_DIR, "ML_Model", "crop_model.pkl"), "rb") as f:
+with open("../ML_Model/crop_model.pkl", "rb") as f: 
     crop_model = pickle.load(f)
+
 route = Blueprint("route", __name__)
 load_dotenv()
 client = Groq(
@@ -34,28 +26,17 @@ client = Groq(
 # ===============================
 # LOAD CNN MODEL
 # ===============================
-# cnn_model = tf.keras.models.load_model(
-#     "../ML_Model/disease_cnn_model.keras"
-# )
-# with open("../ML_Model/disease_classes.pkl", "rb") as f:
-#     disease_classes = pickle.load(f)
-# # ===============================
-# # LOAD DISEASE CSV
-# # ===============================
-
-# disease_data = pd.read_csv( 
-#     "../datasets/disease_data.csv" )
-
 cnn_model = tf.keras.models.load_model(
-    os.path.join(BASE_DIR, "ML_Model", "disease_cnn_model.keras")
+    "../ML_Model/disease_cnn_model.keras"
 )
-
-with open(os.path.join(BASE_DIR, "ML_Model", "disease_classes.pkl"), "rb") as f:
+with open("../ML_Model/disease_classes.pkl", "rb") as f:
     disease_classes = pickle.load(f)
+# ===============================
+# LOAD DISEASE CSV
+# ===============================
 
-disease_data = pd.read_csv(
-    os.path.join(BASE_DIR, "datasets", "disease_data.csv")
-)
+disease_data = pd.read_csv( 
+    "../datasets/disease_data.csv" )
 
 # ===============================
 # HOME PAGE
@@ -211,7 +192,7 @@ def predict_disease():
     image_file = request.files["leaf_image"]
 
     
-    upload_folder = os.path.join(BASE_DIR, "uploads")
+    upload_folder = "../uploads"
 
 
     if not os.path.exists(upload_folder):
