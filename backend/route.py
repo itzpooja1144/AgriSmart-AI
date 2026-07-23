@@ -10,26 +10,11 @@ from dotenv import load_dotenv
 from groq import Groq
 from dotenv import load_dotenv
 import os
-from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-print("FILE =", __file__)
-print("BASE_DIR =", BASE_DIR)
-print("MODEL PATH =", BASE_DIR / "ML_Model" / "crop_model.pkl")
-print("EXISTS =", (BASE_DIR / "ML_Model" / "crop_model.pkl").exists())
-print("BASE_DIR EXISTS:", os.path.exists(BASE_DIR))
-print("ML_Model EXISTS:", os.path.exists(os.path.join(BASE_DIR, "ML_Model")))
-
-if os.path.exists(BASE_DIR):
-    print("BASE_DIR FILES:", os.listdir(BASE_DIR))
-
-print("=" * 50)
 API_KEY = "16b017cbcad811efce8a81b7b7b2d542"
-# with open("../ML_Model/crop_model.pkl", "rb") as f: 
-#     crop_model = pickle.load(f)
-with open(os.path.join(BASE_DIR, "ML_Model", "crop_model.pkl"), "rb") as f:
+with open("../ML_Model/crop_model.pkl", "rb") as f: 
     crop_model = pickle.load(f)
+
 
 route = Blueprint("route", __name__)
 load_dotenv()
@@ -40,22 +25,18 @@ client = Groq(
 # ===============================
 # LOAD CNN MODEL
 # ===============================
-# cnn_model = tf.keras.models.load_model(
-#     "../ML_Model/disease_cnn_model.keras"
-# )
 cnn_model = tf.keras.models.load_model(
-    os.path.join(BASE_DIR, "ML_Model", "disease_cnn_model.keras")
+    "../ML_Model/disease_cnn_model.keras"
 )
 
-with open(os.path.join(BASE_DIR, "ML_Model", "disease_classes.pkl"), "rb") as f:
+with open("../ML_Model/disease_classes.pkl", "rb") as f:
     disease_classes = pickle.load(f)
+
 # ===============================
 # LOAD DISEASE CSV
 # ===============================
 
-disease_data = pd.read_csv(
-    os.path.join(BASE_DIR, "datasets", "disease_data.csv")
-)
+disease_data = pd.read_csv("../datasets/disease_data.csv")
 
 # ===============================
 # HOME PAGE
@@ -211,8 +192,7 @@ def predict_disease():
     image_file = request.files["leaf_image"]
 
     
-    # upload_folder = "../uploads"
-    upload_folder = os.path.join(BASE_DIR, "uploads")
+    upload_folder = "../uploads"
 
 
     if not os.path.exists(upload_folder):
