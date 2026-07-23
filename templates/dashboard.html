@@ -127,10 +127,13 @@ Market Price
         </a>
     </div>
 
+{% if weather %}
+
 <div class="weather-card">
 
     <div class="weather-icon">
-        ☀️
+        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
+             alt="Weather Icon">
     </div>
 
     <h2>{{ weather.temperature }}°C</h2>
@@ -140,10 +143,12 @@ Market Price
     </p>
 
     <p class="weather-location">
-        Punjab
+        {{ weather.city }}
     </p>
 
 </div>
+
+{% endif %}
 
 </div><!-- hero close -->
 

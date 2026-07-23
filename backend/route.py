@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv()
 
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
+print("API KEY:", API_KEY)
 
 with open(os.path.join(BASE_DIR, "ML_Model", "crop_model.pkl"), "rb") as f:
     crop_model = pickle.load(f)
@@ -79,6 +80,11 @@ def dashboard():
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
 
     response = requests.get(url)
+
+    print("Dashboard Status:", response.status_code)
+    print(response.text)
+
+
     data = response.json()
 
     if response.status_code == 200:
@@ -95,13 +101,14 @@ def dashboard():
             condition = data["weather"][0]["description"].title()
 
         weather = {
-            "city": "Punjab",
+            "city": data["name"],
             "temperature": round(data["main"]["temp"]),
             "humidity": data["main"]["humidity"],
             "condition": condition,
             "icon": data["weather"][0]["icon"],
             "wind": data["wind"]["speed"]
         }
+        print(weather)
 
     return render_template(
         "dashboard.html",
@@ -356,7 +363,14 @@ def weather():
 
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
 
+   
     response = requests.get(url)
+
+    print("API KEY:", API_KEY)
+    print("URL:", url)
+    print("Status Code:", response.status_code)
+    print("Response:", response.text)
+
     data = response.json()
 
     if response.status_code == 200:
@@ -368,6 +382,7 @@ def weather():
             "icon": data["weather"][0]["icon"],
             "wind": data["wind"]["speed"]
         }
+        print(weather)
 
     return render_template(
         "weather.html",
