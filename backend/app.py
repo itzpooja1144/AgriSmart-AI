@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from groq import Groq
 from route import route
+from route import route
 app = Flask(
     __name__,
     template_folder="../templates",
@@ -58,6 +59,7 @@ app.register_blueprint(route)
 # RUN APPLICATION
 # ===============================
 
+import os
+
 if __name__ == "__main__":
-    print(app.url_map)
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
