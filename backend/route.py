@@ -11,14 +11,14 @@ from groq import Groq
 from dotenv import load_dotenv
 import os
 
+
 API_KEY = "16b017cbcad811efce8a81b7b7b2d542"
 
-with open("../ML_Model/crop_model.pkl", "rb") as f:
+
+with open("../ML_Model/crop_model.pkl", "rb") as f: 
     crop_model = pickle.load(f)
 route = Blueprint("route", __name__)
-
 load_dotenv()
-
 client = Groq(
     api_key=os.getenv("GROQ_API_KEY")
 )
@@ -26,22 +26,17 @@ client = Groq(
 # ===============================
 # LOAD CNN MODEL
 # ===============================
-
 cnn_model = tf.keras.models.load_model(
-    "../ML_Model/disease_model.keras"
+    "../ML_Model/disease_cnn_model.keras"
 )
-
-
 with open("../ML_Model/disease_classes.pkl", "rb") as f:
     disease_classes = pickle.load(f)
 # ===============================
 # LOAD DISEASE CSV
 # ===============================
 
-disease_data = pd.read_csv(
-    "../datasets/disease_data.csv"
-)
-
+disease_data = pd.read_csv( 
+    "../datasets/disease_data.csv" )
 
 
 # ===============================
@@ -196,7 +191,6 @@ def predict_disease():
 
 
     image_file = request.files["leaf_image"]
-
 
     upload_folder = "../uploads"
 
