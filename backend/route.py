@@ -19,6 +19,10 @@ API_KEY = "16b017cbcad811efce8a81b7b7b2d542"
 # with open("../ML_Model/crop_model.pkl", "rb") as f: 
 #     crop_model = pickle.load(f)
 
+print("CURRENT FILE:", __file__)
+print("CURRENT DIR:", os.path.dirname(__file__))
+print("BASE_DIR:", BASE_DIR)
+
 with open(os.path.join(BASE_DIR, "ML_Model", "crop_model.pkl"), "rb") as f:
     crop_model = pickle.load(f)
 route = Blueprint("route", __name__)
